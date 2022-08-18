@@ -1,18 +1,18 @@
 import reactLogo from "./assets/react.svg";
 import "./styles/App.css";
-import { InputCajita } from "./InputCajita";
+import { Textarea } from "./Textarea";
 
 function App() {
-
   return (
     <div className="App">
       <div>
-        <a href="https://reactjs.org" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
+        <a href="#" target="_blank">
+          <img src={reactLogo} alt="React logo" />
         </a>
       </div>
-      <InputCajita />
-      <p className="read-the-docs">Create by DarvCode white 💙</p>
+      <Textarea />
+
+      <p>Created by DarvCode white 💙 Usernamek-dot</p>
     </div>
   );
 }
