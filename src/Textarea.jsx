@@ -1,5 +1,12 @@
-import { Typography, Button, TextField, Grid, Box } from "@mui/material";
-import { Container } from "@mui/system";
+import {
+  Typography,
+  Button,
+  TextField,
+  Box,
+  Card,
+  CardContent,
+  CardActions,
+} from "@mui/material";
 import React, { useState, useEffect } from "react";
 
 export const Textarea = () => {
@@ -13,7 +20,7 @@ export const Textarea = () => {
   };
 
   const keepOldMessage = () => {
-    setMessage([...mensaje, input]);
+    setMessage([...message, input]);
   };
 
   useEffect(() => {
@@ -27,43 +34,52 @@ export const Textarea = () => {
   }, [input]);
 
   return (
-    <Grid>
-      {/* title */}
-      <Typography variant="h2">Just let it flow</Typography>
+    <>
       {/* input */}
-      <Grid item xs={12}>
-        <TextField
-          onChange={getMessage}
-          fullWidth
-          color="secondary"
-          maxRows={100}
-          focused
-          placeholder="Type in"
-          multiline
-          variant="outlined"
-        />
-      </Grid>
-      <Grid item xs={12}>
-        <Button
-          disabled={input.length === 0 || input.length > 100}
-          onClick={keepOldMessage}
-          variant="contained"
-        >
-          Submit
-        </Button>
-      </Grid>
-      {/* //messages */}
-      <Grid item={12}>
+      <Card
+        sx={{ minWidth: 375, backgroundColor: "#bdc3c7" }}
+        variant="outlined"
+      >
+        <CardContent>
+          <Typography variant="h4">Just let it flow</Typography>
+          <TextField
+            onChange={getMessage}
+            fullWidth
+            color="primary"
+            maxRows={100}
+            focused
+            placeholder="Type in"
+            multiline
+            variant="outlined"
+          />
+        </CardContent>
+        <CardActions>
+          <Button
+            disabled={input.length === 0 || input.length > 100}
+            onClick={keepOldMessage}
+            variant="contained"
+            size="small"
+            color="primary"
+          >
+            Submit
+          </Button>
+        </CardActions>
+      </Card>
+      {/* message */}
+      <Card
+        sx={{ marginTop: 5, padding: 5, backgroundColor: "#bdc3c7" }}
+        variant="outlined"
+      >
         {message == "" ? (
-          <Typography variant="h3">No messages 🙁</Typography>
+          <Typography variant="h6">No messages 🙁</Typography>
         ) : (
-          <Box>
+          <Box sx={{ marginBottom: 10, textAlign: "left" }}>
             {message.map((message, index) => (
               <div key={index}>{message}</div>
             ))}
           </Box>
         )}
-      </Grid>
-    </Grid>
+      </Card>
+    </>
   );
 };
