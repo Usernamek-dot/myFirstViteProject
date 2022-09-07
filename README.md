@@ -1,3 +1,5 @@
-# Ejercicio Caja Mensaje
+# Box message excersise
 
-![Image text](https://github.com/DarvCode1/ejercicio-caja-mensaje/blob/master/src/assets/mensaje.jpg)
+![imagen](https://user-images.githubusercontent.com/66336947/188885063-e0a3e1bb-eda8-4e84-bde7-ed010aba9b6c.png)
+
+
